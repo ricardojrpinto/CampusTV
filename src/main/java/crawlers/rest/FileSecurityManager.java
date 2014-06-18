@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.io.FileReader;
 import java.util.Properties;
 
-class FileSecurityManager implements FBAppSecurityManager{
+public class FileSecurityManager implements AppSecurityManager{
 	
 	static final String DEFAULT_CONF_FILE = "config/fb/app_credentials.conf";
 	
