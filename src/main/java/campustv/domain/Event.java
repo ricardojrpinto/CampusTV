@@ -2,9 +2,6 @@ package campustv.domain;
 
 import java.util.Iterator;
 import java.util.List;
-
-import campustv.repository.DBEventRepository;
-
 public class Event extends Content{
 
 	private String title;

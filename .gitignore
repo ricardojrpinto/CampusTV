@@ -2,3 +2,12 @@
 .project
 .settings
 bin
+target
+config
+fotos
+test
+main
+*.json
+*.db
+*.properties
+

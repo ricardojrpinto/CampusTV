@@ -11,18 +11,28 @@ import java.util.List;
 import campustv.dbutils.JDBCUtils;
 import campustv.dbutils.SQLUtils;
 import campustv.domain.Menu;
+import campustv.repository.exceptions.PermissionException;
 import campustv.repository.exceptions.RepositoryException;
+import campustv.repository.exceptions.SessionException;
 
 public class DBMenuRepository implements MenuRepository {
 
 
-	public void addMenu(Menu m) throws RepositoryException {
+	public void addMenu(Menu m, String accessToken) throws RepositoryException, SessionException, PermissionException {
 		try{
-			ResultSet rs = DBRepositoryUtils.insertContent(m);
-			rs.next();
-			long id_content = rs.getLong(1);
-			m.setContentID(id_content);
-			DBRepositoryUtils.insertMenu(m);
+			if(DBRepositoryUtils.hasProducer(m.getProducerID())){
+				if(DBRepositoryUtils.hasLoggedIn(m.getProducerID(), accessToken)){
+					ResultSet rs = DBRepositoryUtils.insertContent(m);
+					rs.next();
+					long id_content = rs.getLong(1);
+					m.setContentID(id_content);
+					DBRepositoryUtils.insertMenu(m);
+				}
+				else
+					throw new SessionException("User not logged in");
+			}
+			else
+				throw new PermissionException("Don't have permissions");
 		} catch(SQLException e){
 			throw new RepositoryException(e.getMessage());
 		} catch (ParseException e) {
@@ -93,11 +103,23 @@ public class DBMenuRepository implements MenuRepository {
 		}
 	}
 
-	public void removeMenu(long menuID) throws RepositoryException {
+	public void removeMenu(long menuID, long producerID, String accessToken) throws RepositoryException, PermissionException, SessionException {
 		try{
-			Statement st = JDBCUtils.getStatement();
-			st.addBatch("delete from contents where id_content = " + menuID);
-			st.executeBatch();
+			if(DBRepositoryUtils.hasProducer(producerID)){
+				if(DBRepositoryUtils.hasLoggedIn(producerID, accessToken)){
+					if(DBRepositoryUtils.hasOnwer(producerID, menuID)){
+						Statement st = JDBCUtils.getStatement();
+						st.addBatch("delete from contents where id_content = " + menuID);
+						st.executeBatch();
+					}
+					else
+						throw new PermissionException("User not owner of content");
+				}
+				else
+					throw new SessionException("User not logged in");
+			}
+			else
+				throw new PermissionException("Don't have permissions");
 		} catch(SQLException e){
 			throw new RepositoryException(e.getMessage());
 		}

@@ -11,6 +11,7 @@ public abstract class Content {
 	private String category;
 	private String subcategory;
 	private long producerID;
+	private long contentTime;
 	
 	@Override
 	public String toString() {
@@ -35,6 +36,7 @@ public abstract class Content {
 		this.category = category;
 		this.subcategory = subcategory;
 		this.producerID = producerID;
+		this.contentTime = 0;
 	}
 	
 	public long getContentID() {
@@ -101,4 +103,11 @@ public abstract class Content {
 		this.producerID = producerID;
 	}
 	
+	public void setContentTime(long contentTime){
+		this.contentTime = contentTime;
+	}
+	
+	public long getContentTime(){
+		return contentTime;
+	}
 }
