@@ -1,0 +1,14 @@
+body{font-family:Arial, Helvetica, sans-serif; font-size: 12px; color: #333;}
+h1{margin: 5px 0; padding: 0;}
+a{color: #F90;}
+
+.to-flips {width: 178px; float: left; margin: 20px; border: 1px solid #ddd; padding: 10px;}
+.to-flips .content{height: 150px; position: relative; overflow: hidden;}
+.to-flips .content .grey{color: #999;}
+.to-flips .content .block{width: 100%; position: absolute; top: 0px; display: block; overflow: hidden;}
+.to-flips .flipnav{margin: 0 0 0 70px;}
+.to-flips .flipnav .btn-left, 
+.to-flips .flipnav .btn-right,
+.to-flips .flipnav .btn-left-dis, .btn-right-dis {width: 20px; height: 20px; background: #ccc; color: #fff; float: left; font-size: 16px; text-align: center; cursor: pointer;}
+.to-flips .flipnav .btn-left-dis, .to-flips .flipnav .btn-right-dis {color: #fff; background: #fff; cursor: default;}
+

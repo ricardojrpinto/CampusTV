@@ -1,0 +1,309 @@
+
+body{
+        margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    overflow-y:hidden;
+    overflow-x:hidden;
+}
+
+.container{
+    width: 1920px;
+    height: 1080px;
+    background-color: #555;
+}
+
+.A{
+    width: 1366px;
+    height: 768px;
+    float: left;
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;
+    aaabox-shadow: -10px 0px 10px 3px rgba(0,0,0,1);
+
+    -moz-box-shadow: 0px 3px 2px 0px #000;
+    -webkit-box-shadow: 0px 3px 2px 0px #000;
+    box-shadow: 0px 3px 2px 0px #000;
+
+    z-index: 9000;
+    position: absolute;
+}
+
+.B{
+    width: 554px;
+    height: 1080px;
+    right: 0;
+    top: 0;
+    float: right;
+    z-index: 9000;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+}
+
+.C{
+    width: 1246px;
+    height: 242px;
+    float: left;
+    clear: both;
+    position: absolute;
+    bottom: 0;
+    padding: 50px 50px 20px 70px;
+}
+
+
+.C *{
+    color: #ffffff;
+}
+
+/*
+.B *{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    list-style: none;
+    color: #000000;
+    text-align: center;
+    vertical-align: middle;
+}
+*/
+.B h1{
+    font-size: 70px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.rule{
+    width: 85%;
+    height: 1px;
+    border-bottom: 1px solid #666666;
+    margin-left: 7.5%;
+}
+
+.contentB{
+    width: 524px;
+    height: 960px;
+    aaabackground-color: #fff;
+    text-decoration: inherit;
+    color: #fff;
+    right: 0;
+    position: absolute;
+    padding: 15px 15px 15px 15px;
+}
+
+.contentB h1{
+    color: #fff;
+    background-color: steelblue;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#menus, #news, #sn, #events{
+	font-size: 20px;
+}
+
+.popup{
+    width: 500px;
+    border: 1px #888888 solid;
+    background-color: #ffffff;
+    padding: 15px;
+    font-size: inherit;
+    font-weight: normal;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+    font-style: inherit;
+    text-decoration: inherit;
+    -moz-box-shadow: 0px 3px 2px 0px #888888;
+    -webkit-box-shadow: 0px 3px 2px 0px #888888;
+    box-shadow: 0px 3px 2px 0px #888888;
+    margin-left: 11px;
+    margin-right: 11px;
+    margin: auto auto auto auto;
+}
+
+.snlogo {
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin-right: 10px;
+}
+
+#news img{
+    margin-top: 30px;
+    vertical-align: middle;
+    height: 250px;
+    width: 250px;
+}
+
+#sn li p{
+	margin-top:0px;
+}
+
+#sn li {
+    aaamax-height: 145px;
+    width: 440px;
+    margin-top: 25px;
+}
+
+#sn *{
+    text-align: left;
+    font-size: 25px;
+    list-style: none;
+}
+
+.snlogo {
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+
+.imgC{
+    width: 150px;
+    height: 242px;
+    float: left;
+}
+
+.imgC #desc{
+    font-size: 35px;
+    margin: 0 0 0 0;
+    padding: 1px 3px 1px 3px;
+    background-color: steelblue;
+    max-width: 150px;
+    max-height: 100px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.imgC img{
+    min-width: 100px;
+    height: 100px;
+    margin-top: -20px;
+    margin-left: 20px;
+}
+
+.contentC{
+    width: 1056px;
+    height: 242px;
+    float: left;
+    margin-left: 40px;
+}
+
+.contentC *{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.contentC h1{
+    font-size: 48px;
+}
+
+.contentC p{
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.D{
+    height: 100px;
+    color: #fff;
+}
+
+.clockD{
+    margin-bottom: 0;
+    margin-right: 0;
+    width: 277px;
+    position: relative;
+}
+
+#clock{
+    font-size: 70px;
+    bottom: 0;
+    right: 5px;
+    position: absolute;
+}
+
+/**********Weather PLUGIN***********/
+
+@font-face {
+    font-family: 'weather';
+    src: url('https://dl.dropboxusercontent.com/u/2086809/weatherfont/artill_clean_icons-webfont.eot');
+    src: url('https://dl.dropboxusercontent.com/u/2086809/weatherfont/artill_clean_icons-webfont.eot?#iefix') format('embedded-opentype'),
+    url('https://dl.dropboxusercontent.com/u/2086809/weatherfont/artill_clean_icons-webfont.woff') format('woff'),
+    url('https://dl.dropboxusercontent.com/u/2086809/weatherfont/artill_clean_icons-webfont.ttf') format('truetype'),
+    url('https://dl.dropboxusercontent.com/u/2086809/weatherfont/artill_clean_icons-webfont.svg#artill_clean_weather_iconsRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#weather {
+    height: 90px;
+    width: 500px;
+    text-align: center;
+    text-transform: uppercase;
+    right: 180px;
+    bottom: 0;
+    position: absolute;
+}
+
+#weather *{
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+i {
+    font-family: weather;
+    font-size: 100px;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.0;
+}
+
+.icon-0:before { content: ":"; }
+.icon-1:before { content: "p"; }
+.icon-2:before { content: "S"; }
+.icon-3:before { content: "Q"; }
+.icon-4:before { content: "S"; }
+.icon-5:before { content: "W"; }
+.icon-6:before { content: "W"; }
+.icon-7:before { content: "W"; }
+.icon-8:before { content: "W"; }
+.icon-9:before { content: "I"; }
+.icon-10:before { content: "W"; }
+.icon-11:before { content: "I"; }
+.icon-12:before { content: "I"; }
+.icon-13:before { content: "I"; }
+.icon-14:before { content: "I"; }
+.icon-15:before { content: "W"; }
+.icon-16:before { content: "I"; }
+.icon-17:before { content: "W"; }
+.icon-18:before { content: "U"; }
+.icon-19:before { content: "Z"; }
+.icon-20:before { content: "Z"; }
+.icon-21:before { content: "Z"; }
+.icon-22:before { content: "Z"; }
+.icon-23:before { content: "Z"; }
+.icon-24:before { content: "E"; }
+.icon-25:before { content: "E"; }
+.icon-26:before { content: "3"; }
+.icon-27:before { content: "a"; }
+.icon-28:before { content: "A"; }
+.icon-29:before { content: "a"; }
+.icon-30:before { content: "A"; }
+.icon-31:before { content: "6"; }
+.icon-32:before { content: "1"; }
+.icon-33:before { content: "6"; }
+.icon-34:before { content: "1"; }
+.icon-35:before { content: "W"; }
+.icon-36:before { content: "1"; }
+.icon-37:before { content: "S"; }
+.icon-38:before { content: "S"; }
+.icon-39:before { content: "S"; }
+.icon-40:before { content: "M"; }
+.icon-41:before { content: "W"; }
+.icon-42:before { content: "I"; }
+.icon-43:before { content: "W"; }
+.icon-44:before { content: "a"; }
+.icon-45:before { content: "S"; }
+.icon-46:before { content: "U"; }
+.icon-47:before { content: "S"; }
+
+#weather h2 {
+    font-size: 70px;
+    font-weight: 300;
+    text-align: center;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+}
+

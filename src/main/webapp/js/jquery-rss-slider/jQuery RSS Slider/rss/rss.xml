@@ -1,0 +1,43 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Vemotion News Feed</title>
+		<description>Vemotion Latest News</description> 
+		<link>http://www.vemotion.com</link>	
+		
+		<item>
+			<title>jQuery RSS Slider</title>
+			<description>
+			<![CDATA[
+			<p>jQuery, jFlip and jFeed working in perfect harmony. Buy the man a drink!.</p>
+			]]>
+			</description>	
+			<link>http://www.peterhintondesign.co.uk</link>		
+			<pubDate>Tue, 9 Mar 2010 10:00:00 GMT</pubDate>
+		</item>
+
+		<item>
+			<title>The World of TeleWare is Born</title>
+			<description>
+
+			<![CDATA[
+			<p>Launching an interactive cityscape showcasing the TeleWare range of solutions.</p>
+			]]>
+			</description>	
+			<link>http://www.worldofteleware.com</link>		
+			<pubDate>Fri, 5 Mar 2010 11:00:00 GMT</pubDate>
+		</item>
+
+		<item>
+			<title>Multiple Instances of jDiv</title>
+			<description>
+
+			<![CDATA[
+			<p>An MTV.com style dropdown menu using jQuery and jDiv.</p>
+			]]>
+			</description>	
+			<link>http://www.peterhintondesign.co.uk/journal/index.php/using-multiple-instances-of-jdiv/</link>		
+			<pubDate>Mon, 22 Feb 2010 11:00:00 GMT</pubDate>
+		</item>
+
+	</channel>
+</rss>

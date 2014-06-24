@@ -1,0 +1,77 @@
+<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+<div id="player"></div>
+
+
+<script>
+	// 2. This code loads the IFrame Player API code asynchronously.
+	var tag = document.createElement('script');
+
+	tag.src = "https://www.youtube.com/iframe_api";
+	var firstScriptTag = document.getElementsByTagName('script')[0];
+	firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+	// 3. This function creates an <iframe> (and YouTube player)
+	//    after the API code downloads.
+	var player;
+	function onYouTubeIframeAPIReady() {
+		player = new YT.Player('player', {
+			height: '768',
+			width: '1366',
+		   // videoId: 'nJgKy_0VDb4',   //"game of thrones and spoilers" opening
+
+			playerVars: {       //check this site for a parameter list
+								// https://developers.google.com/youtube/youtube_player_demo
+
+				//autoplay: 1,
+				controls: 0,        //no control interface
+				rel: 0,             //no related videos at the end
+				showinfo: 0,        //no info interface
+				loop: 1,
+				//start: 70,        //start at x seconds
+				//modestbranding: 1,
+				iv_load_policy : 3    //disable notifications
+				//playlist: ['1LTU55_9voA','mKXIXPiVk3U', 'RrG5V3YCGxA', 'yRWImnsdq28']        //list of videos to play in succession
+			},
+			events: {
+				'onReady': onPlayerReady,
+				'onStateChange': onPlayerStateChange
+			}
+		});
+
+	}
+
+	// 4. The API will call this function when the video player is ready.
+	function onPlayerReady(event) {
+		//player.setPlaybackQuality('hd720');
+		player.loadPlaylist(['mKXIXPiVk3U', 'RrG5V3YCGxA', 'yRWImnsdq28']);             //PLAYLIST HARDCODED
+		event.target.playVideo();
+	}
+
+	// 5. The API calls this function when the player's state changes.
+	//    The function indicates that when playing a video (state=1),
+	//    the player should play for six seconds and then stop.
+	var done = false;
+	function onPlayerStateChange(event) {
+		if (event.data == YT.PlayerState.PLAYING) {
+			setTimeout(nextVideo, 90 *1000);                        //INTERVALO HARCODED
+		   // event.target.stopVideo();
+		   //done = true;
+		}
+		if(event.data == YT.PlayerState.ENDED){
+
+		}
+	}
+//        function stopVideo() {
+//            player.stopVideo();
+//        }
+//        function playVideo() {
+//            player.playVideo();
+//        }
+//        function playFromStart(){
+//            player.seekTo(0, true);
+//            stopVideo();
+//        }
+	function nextVideo(){
+		player.nextVideo();
+	}
+</script>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>jQuery RSS Reader</title>
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" ></script>
+<script type="text/javascript" src="js/jquery.jfeed.pack.js"></script>
+<script type="text/javascript" src="js/jquery.flips.min.js"></script>
+<script type="text/javascript">
+jQuery(function() {
+
+    jQuery.getFeed({
+		// RSS path must be local unless using a proxy
+        url: 'rss/rss.xml',
+        success: function(feed) {
+            
+            var html = '';
+            
+			// Selects how many RSS items to parse
+            for(var i = 0; i < feed.items.length && i < 3; i++) {
+            
+                var item = feed.items[i];
+                html += '<div class=block>'
+				// Gets the RSS link and title
+				+ '<h3>' + '<a href="' + item.link + '">' + item.title + '</a>' + '</h3>';
+                
+                html += '<div class="grey">'
+				// Gets the RSS pubDate
+                + item.updated
+                + '</div>'               
+                // Gets the RSS description
+				+ item.description
+				+ '</div>';
+            }
+            jQuery('#latestnews').append(html);
+			
+			// Adds the jQuery Flips element. The direction can left, top or bottom/
+			$('#news').flips( { autorun_delay:1000, direction: 'right'});
+        }    
+    });
+});
+</script>
+</head>
+
+<body>
+
+    <div class="to-flips" id="news">
+        
+        <h1>Latest News</h1>
+        
+        <div class="content">
+           
+           <div id="latestnews"></div>
+            
+        </div>
+
+        <div class="flipnav"></div>
+    </div>
+
+
+</body>
+</html>
